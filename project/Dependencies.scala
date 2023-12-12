@@ -38,8 +38,16 @@ object Dependencies {
   val dfpAxis = "com.google.api-ads" % "dfp-axis" % "5.2.0"
   val faciaFapiScalaClient = "com.gu" %% "fapi-client-play28" % faciaVersion
   val identityCookie = "com.gu.identity" %% "identity-cookie" % identityLibVersion
-  val identityModel = "com.gu.identity" %% "identity-model" % identityLibVersion
-  val identityAuthPlay = "com.gu.identity" %% "identity-auth-play" % identityLibVersion
+  val identityModel = ("com.gu.identity" %% "identity-model" % identityLibVersion)
+    .excludeAll(ExclusionRule("org.scala-lang.modules", "scala-xml_2.13"))
+  val identityAuthPlay = ("com.gu.identity" %% "identity-auth-play" % identityLibVersion)
+    .excludeAll(
+      ExclusionRule("com.typesafe.play", "play_2.13"),
+      ExclusionRule("org.scala-lang.modules", "scala-xml_2.13"),
+      ExclusionRule("com.typesafe.play", "twirl-api_2.13"),
+      ExclusionRule("com.typesafe.play", "twirl-compiler_2.13"),
+      ExclusionRule("com.typesafe.play", "twirl-parser_2.13"),
+    )
   // We're evicting the version of http4s-code used in the Identity packages
   // Once we can upgrade Identity packages to >=4.10 we should remove this
   val http4sCore = "org.http4s" %% "http4s-core" % "0.22.15"
@@ -50,7 +58,8 @@ object Dependencies {
   val json4s = "org.json4s" %% "json4s-native" % "4.0.4"
   val macwire = "com.softwaremill.macwire" %% "macros" % "2.5.7" % "provided"
   val mockito = "org.mockito" % "mockito-all" % "1.10.19" % Test
-  val paClient = "com.gu" %% "pa-client" % "7.0.5"
+  val paClient = ("com.gu" %% "pa-client" % "7.0.5")
+    .excludeAll(ExclusionRule("org.scala-lang.modules", "scala-xml_2.13"))
   val playGoogleAuth = "com.gu.play-googleauth" %% "play-v30" % "2.4.0"
   val playSecretRotation = "com.gu.play-secret-rotation" %% "play-v30" % "0.40"
   val playSecretRotationAwsSdk = "com.gu.play-secret-rotation" %% "aws-parameterstore-sdk-v1" % "0.18"
@@ -88,7 +97,10 @@ object Dependencies {
   val playJson = "org.playframework" %% "play-json" % playJsonVersion
   val playJsonExtensions = "ai.x" %% "play-json-extensions" % playJsonExtensionsVersion
   val playJsonJoda = "org.playframework" %% "play-json-joda" % playJsonVersion
-  val atomRenderer = "com.gu" %% "atom-renderer" % "1.2.0"
+  val atomRenderer = ("com.gu" %% "atom-renderer" % "1.2.0")
+    .excludeAll(ExclusionRule("com.typesafe.play", "twirl-api_2.13"))
+    .excludeAll(ExclusionRule("com.typesafe.play", "twirl-compiler_2.13"))
+    .excludeAll(ExclusionRule("com.typesafe.play", "twirl-parser_2.13"))
   val supportInternationalisation = "com.gu" %% "support-internationalisation" % "0.13"
   val capiAws = "com.gu" %% "content-api-client-aws" % "0.7"
   val okhttp = "com.squareup.okhttp3" % "okhttp" % "4.10.0"
