@@ -92,7 +92,7 @@ object Dependencies {
   val kinesisLogbackAppender = "com.gu" % "kinesis-logback-appender" % "1.4.0"
   val targetingClient = "com.gu" %% "targeting-client" % "1.1.4"
   val scanamo = "org.scanamo" %% "scanamo" % "1.0.0-M11"
-  val enumeratumPlayJson = "com.beachape" %% "enumeratum-play-json" % "1.7.0"
+  val enumeratumPlayJson = "com.beachape" %% "enumeratum-play-json" % "1.8.0"
   val commercialShared = "com.gu" %% "commercial-shared" % "6.1.8"
   val playJson = "org.playframework" %% "play-json" % playJsonVersion
   val playJsonExtensions = "ai.x" %% "play-json-extensions" % playJsonExtensionsVersion
