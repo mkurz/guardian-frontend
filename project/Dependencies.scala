@@ -36,7 +36,8 @@ object Dependencies {
   val cssParser = "net.sourceforge.cssparser" % "cssparser" % "0.9.23"
   val contentApiClient = "com.gu" %% "content-api-client" % capiVersion
   val dfpAxis = "com.google.api-ads" % "dfp-axis" % "5.2.0"
-  val faciaFapiScalaClient = "com.gu" %% "fapi-client-play28" % faciaVersion
+  val faciaFapiScalaClient = "com.gu" %% "fapi-client-play28" % faciaVersion // TODO: should be `fapi-client-play30`
+    // -> see https://github.com/guardian/facia-scala-client/pull/298
   val identityCookie = "com.gu.identity" %% "identity-cookie" % identityLibVersion
   val identityModel = ("com.gu.identity" %% "identity-model" % identityLibVersion)
     .excludeAll(ExclusionRule("org.scala-lang.modules", "scala-xml_2.13"))
