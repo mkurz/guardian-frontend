@@ -95,7 +95,9 @@ object Dependencies {
   val enumeratumPlayJson = "com.beachape" %% "enumeratum-play-json" % "1.8.0"
   val commercialShared = "com.gu" %% "commercial-shared" % "6.1.8"
   val playJson = "org.playframework" %% "play-json" % playJsonVersion
-  val playJsonExtensions = "ai.x" %% "play-json-extensions" % playJsonExtensionsVersion
+  val playJsonExtensions = ("ai.x" %% "play-json-extensions" % playJsonExtensionsVersion)
+//    .excludeAll(ExclusionRule(organization = "com.typesafe.play"))
+//    .excludeAll(ExclusionRule(organization = "com.typesafe.play"))
   val playJsonJoda = "org.playframework" %% "play-json-joda" % playJsonVersion
   val atomRenderer = ("com.gu" %% "atom-renderer" % "1.2.0")
     .excludeAll(ExclusionRule("com.typesafe.play", "twirl-api_2.13"))
